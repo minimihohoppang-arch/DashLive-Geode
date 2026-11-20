@@ -20,7 +20,7 @@ jobs:
         id: build
         uses: geode-sdk/build-geode-mod@main
         with:
-          sdk: latest
+          sdk: 4.0.0
           target: Android64
           build-config: Release
           path: default

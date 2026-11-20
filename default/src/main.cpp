@@ -24,9 +24,10 @@ CCMenuItemSpriteExtra* makeButton(
 }
 }
 
-class DashLivePopup : public Popup<> {
+class DashLivePopup : public geode::Popup {
 protected:
-    bool setup() override {
+    bool init() {
+        if (!geode::Popup::init(420.f, 250.f, "GJ_square01.png")) return false;
         this->setTitle("DashLive");
 
         auto subtitle = CCLabelBMFont::create(
@@ -113,7 +114,7 @@ protected:
 public:
     static DashLivePopup* create() {
         auto popup = new DashLivePopup();
-        if (popup && popup->initAnchored(420.f, 250.f, "GJ_square01.png")) {
+        if (popup && popup->init()) {
             popup->autorelease();
             return popup;
         }

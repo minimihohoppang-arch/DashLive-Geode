@@ -17,4 +17,35 @@ class $modify(DashLiveMenuLayer, MenuLayer) {
 
         auto icon = CCSprite::create("dashlive_button.png"_spr);
         if (!icon) {
-            icon = CCSprite::create
+            icon = CCSprite::createWithSpriteFrameName("GJ_likeBtn_001.png");
+        }
+
+        if (!icon) {
+            return true;
+        }
+
+        icon->setScale(0.74f);
+
+        auto button = CCMenuItemSpriteExtra::create(
+            icon,
+            this,
+            menu_selector(DashLiveMenuLayer::onDashLive)
+        );
+
+        if (!button) {
+            return true;
+        }
+
+        button->setID("dashlive-button"_spr);
+        menu->addChild(button);
+        menu->updateLayout();
+
+        return true;
+    }
+
+    void onDashLive(CCObject*) {
+        web::openLinkInBrowser(
+            "https://geometrydashkoreahub.yslovelyu.chatgpt.site"
+        );
+    }
+};

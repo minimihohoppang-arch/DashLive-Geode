@@ -1,17 +1,11 @@
 {
-	"geode": "{{ geode }}",
-	"gd": {
-		"win": "2.2081",
-		"android": "2.2081",
-		"mac": "2.2081",
-		"ios": "2.2081"
-	},
-	"id": "{{ id }}",
-	"name": "{{ name }}",
-	"version": "{{ version }}",
-	"developer": "{{ developer }}",
-	"description": "{{ description }}",
-	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
-	}
-}
+  "geode": "4.0.0",
+  "gd": {
+    "android": "2.2081"
+  },
+  "id": "ktmgd.dashlive",
+  "name": "DashLive",
+  "version": "1.0.0",
+  "developer": "KTMGD",
+  "description": "한국 지오메트리 대시 생방송과 자유 채팅을 모아 보는 모드",
+  "repository": "https://github.com/minimihopppang-arch/DashLive-Ge

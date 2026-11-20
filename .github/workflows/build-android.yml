@@ -16,6 +16,12 @@ jobs:
       - name: 소스 가져오기
         uses: actions/checkout@v4
 
+      - name: Android NDK 27 설치
+        shell: bash
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
+            --install "ndk;27.2.12479018"
+
       - name: Android64 모드 만들기
         id: build
         uses: geode-sdk/build-geode-mod@main
@@ -31,3 +37,4 @@ jobs:
         with:
           name: DashLive-Android64
           path: ${{ steps.build.outputs.build-output }}
+          if-no-files-found: error
